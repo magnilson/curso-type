@@ -1,0 +1,22 @@
+version: "3.6"
+services:
+  app:
+    container_name: app
+    build: .
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    links:
+      - mongo
+    volumes:
+      - ./dist:/usr/src/app
+      - ./package.json:/usr/src/app/package.json
+      - ./node_modules:/usr/src/app/node_modules
+      - ./uploads:/usr/src/app/uploads
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"

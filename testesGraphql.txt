@@ -1,0 +1,54 @@
+
+#adicionar
+mutation ($news: NewsInput!) {
+  addNews(input: $news) {
+   hat,
+   title,
+   text,
+   author,
+   img,
+   link,
+   active
+  }
+}
+{
+   "news":{
+    "hat": "bolovo de forno",
+    "title": "Aprenda a fazer bolovo de forno",
+    "text": "O chef Netão foi ao Melhor da Tarde desta sexta-feira, 21, e ensinou uma receita maravilhosa de bolovo de forno.",
+    "author": "Da Redação, com Estadão Conteúd",
+    "img": "https://thumb.mais.uol.com.br/16665385-large.jpg?ver=0",
+    "link": "https://entretenimento.band.uol.com.br/melhordatarde/videos/16665385/aprenda-a-fazer-bolovo-de-forno",
+    "active": true
+   }
+}
+#atualizar
+mutation ($news: NewsInput!) {
+  updateNews(input:$news) {
+   hat,
+   title,
+   text,
+   author,
+   img,
+   link,
+   active
+  }
+}
+{
+  "news": {
+    "_id": "Seu Id de registro",
+    "hat": "bolovo de forno2",
+    "title": "Aprenda a fazer bolovo de forno",
+    "text": "O chef Netão foi ao Melhor da Tarde desta sexta-feira, 21, e ensinou uma receita maravilhosa de bolovo de forno.",
+    "author": "Da Redação, com Estadão Conteúd",
+    "img": "https://thumb.mais.uol.com.br/16665385-large.jpg?ver=0",
+    "link": "https://entretenimento.band.uol.com.br/melhordatarde/videos/16665385/aprenda-a-fazer-bolovo-de-forno",
+    "active": true
+  }
+}
+#deletar objeto
+mutation {
+  deleteNews(id:"5d0d4d13a7dd433858cb6488"){
+    _id
+  }
+}
